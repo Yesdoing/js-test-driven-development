@@ -11,6 +11,11 @@ class TestCase {
   run() {
     this.setUp();
     this[this.name]();
+    this.tearDown();
+  }
+
+  tearDown() {
+    
   }
 }
 
