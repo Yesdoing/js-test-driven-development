@@ -15,11 +15,17 @@ class WasRun extends TestCase {
   }
 
   testBrokenMethod() {
-    throw Error("error");
+    throw "error";
   }
 
   tearDown() {
     this.log = this.log + "tearDown "
+  }
+
+  testThrowErrorSetup() {
+    this.setUp(() => {
+      throw Error('error');
+    })
   }
 }
 

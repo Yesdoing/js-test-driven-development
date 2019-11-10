@@ -8,14 +8,16 @@ class TestCase {
   setUp() {
   }
   
-  run() {
-    const result = new TestResult();
+  run(result) {
     result.testStarted();
-    this.setUp();
-    this[this.name]();
-    this.tearDown();
 
-    return result;
+    this.setUp();
+    try {
+      this[this.name]();
+    } catch(e) {
+      result.testFailed();
+    }
+    this.tearDown();
   }
 
   tearDown() {
