@@ -1,16 +1,13 @@
+const TestCase = require('./TestCase.js');
 
-class WasRun {
+class WasRun extends TestCase {
   constructor(name) {
+    super(name);
     this.wasRun = null;
-    this.name = name;
   }
 
   testMethod() {
     this.wasRun = 1;
-  }
-
-  run() {
-    this[this.name]();
   }
 }
 
