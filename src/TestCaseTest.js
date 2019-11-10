@@ -8,11 +8,18 @@ class TestCaseTest extends TestCase {
     super(name);
   }
 
+  setUp() {
+    this.test = new WasRun("testMethod");
+  }
+
   testRunning() {
-    const test = new WasRun("testMethod");
-    assert(!test.wasRun)
-    test.run()
-    assert(test.wasRun)
+    this.test.run()
+    assert(this.test.wasRun)
+  }
+
+  testSetUp() {
+    this.test.run()
+    assert(this.test.wasSetUp)
   }
 }
 

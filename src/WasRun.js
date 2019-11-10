@@ -6,6 +6,11 @@ class WasRun extends TestCase {
     this.wasRun = null;
   }
 
+  setUp() {
+    this.wasRun = null;
+    this.wasSetUp = 1;
+  }
+
   testMethod() {
     this.wasRun = 1;
   }
