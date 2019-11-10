@@ -12,15 +12,22 @@ class TestCaseTest extends TestCase {
     this.test = new WasRun("testMethod");
   }
 
-  // testRunning() {
-  //   this.test.run()
-  //   assert(this.test.wasRun)
-  // }
-
   testTemplateMethod() {
     const test = new WasRun("testMethod")
     test.run()
     assert("setUp testMethod tearDown " === test.log)
+  }
+
+  testResult() {
+    const test = new WasRun("testMethod");
+    const result = test.run()
+    assert("1 run, 0 failed" === result.summary())
+  }
+
+  testFiledResult() {
+    const test = new WasRun("testBrokenMethod");
+    const result = test.run();
+    assert("1 run, 1 failed" === result.summary());
   }
 }
 

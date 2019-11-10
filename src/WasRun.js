@@ -14,6 +14,10 @@ class WasRun extends TestCase {
     this.log = this.log + "testMethod "
   }
 
+  testBrokenMethod() {
+    throw Error("error");
+  }
+
   tearDown() {
     this.log = this.log + "tearDown "
   }
