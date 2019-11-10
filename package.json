@@ -1,0 +1,11 @@
+{
+  "name": "tdd",
+  "version": "1.0.0",
+  "description": "## TODO",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "author": "yesdoing",
+  "license": "ISC"
+}
